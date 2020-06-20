@@ -24,5 +24,19 @@ public class UserServiceImpl {
 		return email;	
 	}
 	
+	public void doProcess() {
+		System.out.println("doProcess() method started");
+		pushMsgTokafkaTopic("msg");
+		System.out.println("doProcess() method stop");
+	}
+	public void pushMsgTokafkaTopic(String msg) {
+		System.out.println("msg pushing to kafka...");
+	}
+	// private method
+	private String formatMsg(String msg) {
+		System.out.println("formatMsg() is called");
+		return msg.toUpperCase();
+	}
+	
 	
 }
